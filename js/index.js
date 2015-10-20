@@ -11,7 +11,7 @@ var index  = (function(){
 
     var optIndex = {
         build:function(){
-            console.log("success load js");
+
         },
     };
 
