@@ -1,0 +1,19 @@
+.star {
+    width: 16px;
+    height: 15px;
+    display: block;
+    float: left;
+    margin: 0 2px;
+}
+.star-full {
+    background: url(../img/star.png);
+    background-size: 100% 100%;
+}
+.star-half {
+    background: url(../img/star_half.png);
+    background-size: 100% 100%;
+}
+.star-empty {
+    background: url(../img/star_empty.png);
+    background-size: 100% 100%;
+}
