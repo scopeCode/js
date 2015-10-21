@@ -6,14 +6,10 @@
 var common = (function(){
 
     var star = {
-        arr:[],
-        cnt:0,
-        max:5,
-        emptyCnt:0,
+        arr:[],cnt:0, max:5, emptyCnt:0,
         getStarStr:function(){
             //设定返回的字符串arr 为空
             star.arr.length = 0;
-
             if(star.cnt==0||star.cnt > star.max){
                 star.arr.push(star.getEmptyStarStr(star.max));
             }else{

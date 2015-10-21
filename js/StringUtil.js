@@ -25,11 +25,8 @@ var StringUtil =(function(){
     };
 
 
-
-
     return {
-        getQueryString:function(a){this.getQueryString(a);}
+        getQueryString:function(a){ return getQueryString(a);}
     };
-
 
 })();
