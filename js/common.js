@@ -5,8 +5,13 @@
 
 var common = (function(){
 
+    //评论星星的显示
     var star = {
         arr:[],cnt:0, max:5, emptyCnt:0,
+        /**
+         * 获取评论星星的字符串
+         * @returns {string}
+         */
         getStarStr:function(){
             //设定返回的字符串arr 为空
             star.arr.length = 0;
@@ -56,4 +61,5 @@ var common = (function(){
             return star.getStarStr();
         }
     }
+
 })();
