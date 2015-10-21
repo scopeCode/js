@@ -8,33 +8,56 @@ var common = (function(){
     var star = {
         arr:[],
         cnt:0,
-        starStr:'<span class="star star-#{star}></span>',
-        append:function(){
-            if(star.cnt==0){
-                return "";
+        max:5,
+        emptyCnt:0,
+        getStarStr:function(){
+            //设定返回的字符串arr 为空
+            star.arr.length = 0;
+
+            if(star.cnt==0||star.cnt > star.max){
+                star.arr.push(star.getEmptyStarStr(star.max));
             }else{
-                if(RegexUtil.isFloat(star.cnt)){
+                var dotIndex = star.cnt.toString().indexOf('.');
+                if(dotIndex >= 0){//如果是float
+                    star.cnt = star.cnt - 0.5;
+                    star.arr.push(star.getFullStarStr(star.cnt));
+                    star.emptyCnt = star.max - star.cnt - 1;
+                    star.arr.push(star.getHalfStarStr());
+                }else{//整形的情况
+                    star.emptyCnt = star.max - star.cnt;
+                    star.arr.push(star.getFullStarStr(star.cnt));
+                }
 
-                }else{
-
+                if(star.emptyCnt > 0){
+                    star.arr.push(star.getEmptyStarStr(star.emptyCnt));
                 }
             }
+            return star.arr.join('');
         },
-        getFullStarStr:function(){
-
+        getFullStarStr:function(cnt){
+            var i = 0,arr=[];
+            for(i;i<cnt;i++){
+                arr.push('<span class="star star-full"></span>');
+            }
+            return arr.join('');
         },
-        getEmptyStarStr:function(){
-
+        getEmptyStarStr:function(cnt){
+            var i = 0,arr=[];
+            for(i;i<cnt;i++){
+                arr.push('<span class="star star-empty"></span>');
+            }
+            return arr.join('');
         },
         getHalfStarStr:function(){
-            star.arr.push(star.starStr.format({star:"half"}));
+           return '<span class="star star-half"></span>'
         }
     };
 
     return {
-        star:function(cnt){
-            star.cnt = cnt;
-            star.append();
+        star:function(cnt,max){
+            star.cnt = cnt||star.cnt;
+            star.max = max||star.max;
+            return star.getStarStr();
         }
     }
 })();
