@@ -12,9 +12,9 @@ var RegexUtil = (function(){
         isPhone:/d{3}-d{8}|d{4}-d{7}/,
         isInteger:/^[1-9]d*$/,
         //保留2位小数的float类型的数字
-        isFloat:/^\d+[\.\d]?\d{0,2}$/,
+        isFloat:/^\d+\.\d{2}$/,
         //保留一位小数的float类型的数字
-        isFloatEx:/^\d+[\.\d]?\d{0,1}$/,
+        isFloatEx:/^\d+\.\d$/,
         //是否是中文及日文及韩文
         isChineseChar:/[\u4E00-\u9FA5\uF900-\uFA2D]/,
         //是否包含全交
