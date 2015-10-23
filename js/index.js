@@ -19,7 +19,16 @@ var index  = (function(){
             document.getElementById('divStar44').innerHTML = common.star(4.5,5);
             document.getElementById('divStar5').innerHTML = common.star(5,5);*/
 
-
+            var url = "http://localhost:3000/users/getInfo";
+            EventUtil.Ajax(url,{
+                method:"POST",
+                success:function(res){
+                    console.log(res);
+                },
+                failure:function(res){
+                    console.error(res);
+                }
+            });
 
         },
     };
