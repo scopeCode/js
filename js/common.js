@@ -18,7 +18,6 @@ var common = (function(){
             if(star.cnt==0||star.cnt > star.max){
                 star.arr.push(star.getEmptyStarStr(star.max));
             }else{
-                //var dotIndex = star.cnt.toString().indexOf('.');
                 if(RegexUtil.isFloatEx(star.cnt)){//如果是float且 一定是一位小数点的判定
                     star.cnt = star.cnt - 0.5;
                     star.arr.push(star.getFullStarStr(star.cnt));
