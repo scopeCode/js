@@ -31,7 +31,7 @@ var RegexUtil = (function(){
         isPhone:function(a){            return pattern.isPhone.test(a); },
         isInteger:function(a){          return pattern.isInteger.test(a); },
         isFloat:function(a){            return pattern.isFloat.test(a); },
-        isFloatEx:function(a){            return pattern.isFloatEx.test(a); },
+        isFloatEx:function(a){          return pattern.isFloatEx.test(a); },
         isChineseChar:function(a){      return pattern.isChineseChar.test(a); },
         isFullwidthChar:function(a){    return pattern.isFullwidthChar.test(a);},
         isEmail:function(a){            return pattern.isEmail.test(a);},
